@@ -12,7 +12,14 @@ const connect = function() {
     conn.write('Name: YHN');
   });
 
-
+  conn.on('connect', () => {
+    setTimeout(() => {
+      conn.write('Move: up');
+      // conn.write('Move: down');
+      // conn.write('Move: left');
+      // conn.write('Move: right');
+    }, 1000);
+  });
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
