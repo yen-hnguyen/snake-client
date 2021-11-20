@@ -14,12 +14,12 @@ const connect = function() {
     conn.write('Say: hello!');
   });
 
-  // interpret incoming data as text
-  conn.setEncoding("utf8");
-
   conn.on('data', () => {
     console.log('you ded cuz you idled');
   });
+  
+  // interpret incoming data as text
+  conn.setEncoding("utf8");
 
   return conn;
 };
